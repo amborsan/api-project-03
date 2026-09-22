@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>School API Route Console</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <p class="eyebrow">Local API demo</p>
+        <h1>Route console</h1>
+        <p>Choose a preset, edit the request, and inspect the response from your Express API.</p>
+      </header>
+
+      <div class="grid">
+        <section class="card">
+          <h2>Request</h2>
+          <label for="preset">Route preset</label>
+          <select id="preset"></select>
+
+          <div class="row">
+            <label>Method <select id="method"></select></label>
+            <label>Endpoint <input id="path" type="text" autocomplete="off" /></label>
+          </div>
+
+          <label for="body">JSON body</label>
+          <textarea id="body" rows="10" spellcheck="false"></textarea>
+
+          <label for="token">JWT token</label>
+          <textarea id="token" rows="3" spellcheck="false" placeholder="Login first, or paste a token"></textarea>
+          <div class="token-actions">
+            <label class="checkbox"><input id="include-token" type="checkbox" checked /> Send token</label>
+            <button id="clear-token" type="button" class="secondary">Clear token</button>
+          </div>
+          <button id="send" type="button">Send request</button>
+        </section>
+
+        <section class="card response-card">
+          <div class="response-heading">
+            <h2>Response</h2>
+            <span id="status" class="status">Ready</span>
+          </div>
+          <pre id="response">Select a route and send a request.</pre>
+        </section>
+      </div>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
